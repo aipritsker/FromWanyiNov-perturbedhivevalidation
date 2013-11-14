@@ -59,17 +59,16 @@ B(49,27:42)=u*ones(1,16);
 C=zeros(agemax);
 C(27,49:agemax)= v*ones(1,12); % the retarded development of forager bees 
 transit=A+B+C; 
-
 %%Model pesticide intervention 
-% 
-% startdate enddate exposuretime=enddate-startdate toxicity=0.5^(1/7);
-% st1=survivalrateafterexposure=(0.85-toxicity*exposuretime)^(1/3); 
-% if
-% t<startdate 
-% st1=0.85^(1/3); 
-% if startdate<t<enddate+1 st1=
-% survivalrateafterexposure=(0.85-toxicity*exposuretime)^(1/3)
-% else 
+
+startdate enddate exposuretime=enddate-startdate toxicity=0.5^(1/7);
+st1=survivalrateafterexposure=(0.85-toxicity*exposuretime)^(1/3); 
+if
+t<startdate 
+st1=0.85^(1/3); 
+if startdate<t<enddate+1 st1=
+survivalrateafterexposure=(0.85-toxicity*exposuretime)^(1/3)
+else 
 
 
 

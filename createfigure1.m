@@ -70,10 +70,19 @@ axes3 = axes('Parent',figure1,...
 box('on');
 hold('all');
 
-%Create plot
-plot(Y1,'Parent',axes3,'Marker','o','Color',[0 0 0]);
 
-%Create ylabel
-ylabel('Number of Eggs');
+% Create plot for weight
+
+%correct one
+W = (.047*YMatrix1(:, 2)+.158*YMatrix1(:, 3) + .133*(YMatrix1(:, 4)+YMatrix1(:, 5)+YMatrix1(:, 6)) + .23*YMatrix2(:, 1)+ .5*YMatrix2(:, 2))/1000;
+% %Wanyi's
+% foundationweight = 50.2 * 453.6 /1000;
+% W = (.1552*YMatrix1(:, 2)+.1552*YMatrix1(:, 3) + .2189*(YMatrix1(:, 4)+YMatrix1(:, 5)) + .23*YMatrix2(:, 1)+ .5*YMatrix2(:, 2))/1000 + foundationweight;
+plot(W,'Parent',axes3,'Marker','o','Color',[0 0 0]);
+
+% Create ylabel
+ylabel('Weight (kg) - no equipment');
+
+print -depsc output.eps
 
 end 
